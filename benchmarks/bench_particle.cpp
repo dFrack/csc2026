@@ -6,7 +6,7 @@
 static void BM_PtCalculationBatch(benchmark::State& state) {
     std::vector<csc2026::Particle> particles(static_cast<size_t>(state.range(0)));
     for (size_t i = 0; i < particles.size(); ++i) {
-        particles[i] = csc2026::Particle(0.1 * i, 0.2 * i, 0.3 * i, 0.511);
+        particles[i] = csc2026::Particle(0.1 * static_cast<double>(i), 0.2 * static_cast<double>(i), 0.3 * static_cast<double>(i), 0.511);
     }
 
     std::vector<double> results(particles.size());
@@ -20,5 +20,3 @@ static void BM_PtCalculationBatch(benchmark::State& state) {
 }
 
 BENCHMARK(BM_PtCalculationBatch)->Arg(1000)->Arg(10000)->Arg(100000);
-
-BENCHMARK_MAIN();

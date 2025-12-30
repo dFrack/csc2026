@@ -4,7 +4,7 @@
 
 namespace csc2026 {
 
-struct Particle {
+struct EventParticle {
     double px{};
     double py{};
     double pz{};
@@ -15,7 +15,7 @@ struct Particle {
 
 struct Event {
     int id{};
-    std::vector<Particle> particles{};
+    std::vector<EventParticle> particles{};
 };
 
 class EventProcessor {
@@ -38,4 +38,3 @@ private:
 };
 
 } // namespace csc2026
-

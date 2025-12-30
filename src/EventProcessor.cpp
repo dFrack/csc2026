@@ -7,7 +7,7 @@
 
 namespace csc2026 {
 
-double Particle::energy() const {
+double EventParticle::energy() const {
     const double p2 = px * px + py * py + pz * pz;
     return std::sqrt(p2 + mass * mass);
 }
@@ -52,7 +52,7 @@ std::vector<Event> EventProcessor::generateSampleEvents(size_t nEvents) {
         e.particles.resize(100);
 
         for (size_t p = 0; p < e.particles.size(); ++p) {
-            Particle part;
+            EventParticle part;
             part.px = 0.1 * static_cast<double>(p);
             part.py = 0.2 * static_cast<double>(p);
             part.pz = 0.3 * static_cast<double>(p);
@@ -67,4 +67,3 @@ std::vector<Event> EventProcessor::generateSampleEvents(size_t nEvents) {
 }
 
 } // namespace csc2026
-
